@@ -99,5 +99,84 @@
         </form>
       </div>
     </div>
+
+    <!-- Settlement Table -->
+    <div class="custom-table-card">
+      <div
+        class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center"
+      >
+        <h6 class="table-header-text">
+          Total number of listed transactions :
+          <strong class="text-dark fw-bold">15</strong>
+        </h6>
+      </div>
+      <div class="custom-table-card-body">
+        <div class="custom-table-responsive">
+          <table
+            id="transactionTable"
+            class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+          >
+            <thead class="custom-table-light">
+              <tr>
+                <th>S.No</th>
+                <th>Action</th>
+                <th>Qpay ID</th>
+                <th>Merchnat Order ID</th>
+                <th>Merchant Name</th>
+                <th>Mode</th>
+                <th>payment Option</th>
+                <th>Amount₹</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+
+            <tbody id="transactionTableBody">
+              <tr>
+                <td>1</td>
+                <td>
+                  <div class="d-flex gap-2 align-items-center flex-nowrap">
+                    <a
+                      href="#reports/transaction-details"
+                      class="table-action-btn"
+                      title="View Transaction"
+                    >
+                      <i class="bi bi-arrows-angle-expand text-dark"></i>
+                    </a>
+                  </div>
+                </td>
+                <td>926677</td>
+                <td>AI1777116355868</td>
+                <td>AI PRO TRADING VIEWS</td>
+                <td>live</td>
+                <td>UPI</td>
+                <td>11.00</td>
+                <td class="text-success">Paid</td>
+                <td>25/04/2026 16:57:11</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#transactionTable")) {
+          $("#transactionTable").DataTable().destroy();
+        }
+        $("#transactionTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
   </body>
 </html>
