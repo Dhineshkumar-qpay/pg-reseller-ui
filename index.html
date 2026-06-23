@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PG QPAY INDIA - RESELLER</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./table.css" />
+  </head>
+
+  <body>
+    <div class="d-flex vh-100">
+      <!---------------- Sidebar Start ---------------->
+      <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header py-2 px-2 border-bottom bg-white">
+          <img
+            class="rounded mx-auto d-block"
+            src="https://pg.qpayindia.com/WWWS/Images/logo.jpg"
+            alt="logo"
+          />
+        </div>
+
+        <div class="sidebar-menu">
+          <ul class="nav flex-column p-2" id="sidebarAccordion">
+            <li class="nav-item mb-2">
+              <a href="#change-password" class="nav-link page-link">
+                <i class="bi bi-key me-2"></i>
+                Change Password
+              </a>
+            </li>
+
+            <li class="nav-item mb-2">
+              <a href="#merchant-list" class="nav-link page-link">
+                <i class="bi bi-people me-2"></i>
+                Merchant List
+              </a>
+            </li>
+
+            <!-- Settings Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#settingsSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span>
+                  <i class="bi bi-gear me-2"></i>
+                  Settings
+                </span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="settingsSubmenu"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a
+                    href="#settings/general-settings"
+                    class="nav-link page-link"
+                    >General Settings</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#settings/user-registration"
+                    class="nav-link page-link"
+                    >User Registration</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Reports Menu -->
+            <li class="nav-item mb-2">
+              <a
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#reportsSubmenu"
+                class="nav-link d-flex justify-content-between align-items-center"
+              >
+                <span>
+                  <i class="bi bi-bar-chart me-2"></i>
+                  Reports
+                </span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+
+              <ul
+                class="collapse list-unstyled ps-4 mt-2"
+                id="reportsSubmenu"
+                data-bs-parent="#sidebarAccordion"
+              >
+                <li class="mb-1">
+                  <a
+                    href="#reports/settlement-status"
+                    class="nav-link page-link"
+                    >Settlement Status</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a
+                    href="#reports/transaction-reports"
+                    class="nav-link page-link"
+                    >Transaction Reports</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!---------------- Sidebar End ---------------->
+
+      <!-- Main Content -->
+      <div class="main-wrapper">
+        <header
+          class="text-white px-4 py-2 d-flex justify-content-between align-items-center shadow-sm"
+        >
+          <!-- Left Section -->
+          <div class="d-flex align-items-center">
+            <button
+              id="menuToggle"
+              class="btn btn-link text-white d-md-none me-3 p-0"
+            >
+              <i class="bi bi-list fs-2"></i>
+            </button>
+
+            <div class="d-flex align-items-center">
+              <span class="fs-6 fw-bold header-brand-title">QPAY INDIA</span>
+            </div>
+          </div>
+
+          <!-- Right Section -->
+          <div class="d-flex align-items-center gap-3">
+            <!-- Desktop View -->
+            <div class="dropdown d-none d-md-flex align-items-center">
+              <div
+                class="d-flex align-items-center px-2 py-1 rounded"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="cursor: pointer"
+              >
+                <i class="bi bi-person-circle fs-3"></i>
+                <div class="lh-1 text-start ps-2">
+                  <div class="fw-semibold text-nowrap">Welcome, qpa_3DBBFB</div>
+                </div>
+              </div>
+
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                <li class="px-3 py-2 text-dark small" style="min-width: 250px">
+                  <div class="mb-2">
+                    <strong>Account Type:</strong> Reseller
+                  </div>
+                  <div class="mb-2">
+                    <strong>Last Login:</strong> 22/06/2026 09:44:00 AM
+                  </div>
+                  <div class="mb-0">
+                    <strong>Last Login IP:</strong> 172.16.119.140
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile View -->
+            <div class="dropdown d-flex d-md-none">
+              <div
+                class="d-flex align-items-center px-2 py-1 rounded"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="cursor: pointer"
+              >
+                <i class="bi bi-person-circle fs-1"></i>
+              </div>
+
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                <li class="px-3 py-2 text-dark small" style="min-width: 250px">
+                  <div class="fw-semibold text-nowrap mb-2 border-bottom pb-2">
+                    Welcome, qpa_3DBBFB
+                  </div>
+                  <div class="mb-2">
+                    <strong>Account Type:</strong> Reseller
+                  </div>
+                  <div class="mb-2">
+                    <strong>Last Login:</strong> 22/06/2026 09:44:00 AM
+                  </div>
+                  <div class="mb-0">
+                    <strong>Last Login IP:</strong> 172.16.119.140
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Logout Button -->
+            <a
+              href="#"
+              class="d-flex align-items-center justify-content-center rounded-circle bg-white shadow-sm text-decoration-none header-logout-btn"
+              title="Logout"
+              style="width: 30px; height: 30px"
+            >
+              <i class="bi bi-box-arrow-right fs-6"></i>
+            </a>
+          </div>
+        </header>
+
+        <main class="content">
+          <section id="change-password" class="page-section d-none"></section>
+          <section id="merchant-list" class="page-section d-none"></section>
+
+          <!-- Reports Pages -->
+          <section
+            id="reports/settlement-status"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="reports/transaction-reports"
+            class="page-section d-none"
+          ></section>
+
+          <!-- Settings Pages -->
+          <section
+            id="settings/general-settings"
+            class="page-section d-none"
+          ></section>
+          <section
+            id="settings/user-registration"
+            class="page-section d-none"
+          ></section>
+        </main>
+        <footer class="text-white text-center py-3">
+          <p class="mb-0">Copyright © 2026 QPay. All Rights Reserved.</p>
+        </footer>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      const pageLinks = document.querySelectorAll(".page-link");
+      const sections = document.querySelectorAll(".page-section");
+      const sidebar = document.getElementById("sidebar");
+      const menuToggle = document.getElementById("menuToggle");
+
+      const routes = {
+        "change-password": "change-passsword.html",
+        "merchant-list": "merchant-list.html",
+
+        // reports pages
+        "reports/settlement-status": "reports/settlement-status.html",
+        "reports/transaction-reports": "reports/transaction-reports.html",
+
+        // settings pages
+        "settings/general-settings": "settings/general-settings.html",
+        "settings/user-registration": "settings/user-registration.html",
+      };
+
+      async function loadPage(url) {
+        try {
+          const response = await fetch(url);
+
+          if (!response.ok) {
+            throw new Error("Page not found");
+          }
+
+          return await response.text();
+        } catch (error) {
+          return `
+          <div class="alert alert-danger">
+            Unable to load ${url}
+          </div>
+        `;
+        }
+      }
+
+      async function updateRoute() {
+        const route = window.location.hash.replace("#", "") || "merchant-list";
+
+        const target = document.getElementById(route) ? route : "merchant-list";
+
+        if (routes[target]) {
+          const section = document.getElementById(target);
+
+          // Make the target section visible first so that plugins like DataTables can calculate widths
+          sections.forEach((sec) => {
+            sec.classList.toggle("d-none", sec.id !== target);
+          });
+
+          if (!section.dataset.loaded) {
+            section.innerHTML = await loadPage(routes[target]);
+
+            // Execute scripts loaded via AJAX after the section is visible
+            const scripts = section.querySelectorAll("script");
+            scripts.forEach((oldScript) => {
+              const newScript = document.createElement("script");
+              Array.from(oldScript.attributes).forEach((attr) =>
+                newScript.setAttribute(attr.name, attr.value),
+              );
+              newScript.appendChild(
+                document.createTextNode(oldScript.innerHTML),
+              );
+              oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
+
+            section.dataset.loaded = "true";
+          }
+        } else {
+          sections.forEach((sec) => {
+            sec.classList.toggle("d-none", sec.id !== target);
+          });
+        }
+
+        pageLinks.forEach((link) => {
+          const href = link.getAttribute("href").replace("#", "");
+
+          link.classList.toggle("active", href === target);
+        });
+
+        if (window.innerWidth < 768) {
+          sidebar.classList.remove("sidebar-open");
+        }
+      }
+
+      pageLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const route = this.getAttribute("href").replace("#", "");
+          window.location.hash = route;
+        });
+      });
+
+      // Robust Accordion Logic
+      const allSidebarLinks = document.querySelectorAll(".sidebar .nav-link");
+      allSidebarLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const isToggle = this.hasAttribute("data-bs-toggle");
+          const isSubmenuItem = this.closest(".collapse") !== null;
+          const targetId = this.getAttribute("data-bs-target");
+
+          // If we clicked a top-level menu (normal or expandable), close any currently open expandable menus
+          if (!isSubmenuItem) {
+            const openMenus = document.querySelectorAll(
+              ".sidebar .collapse.show",
+            );
+            openMenus.forEach((menu) => {
+              // Don't manually close the one we are currently trying to toggle (Bootstrap handles it)
+              if (isToggle && targetId === "#" + menu.id) {
+                return;
+              }
+              const bsCollapse = bootstrap.Collapse.getInstance(menu);
+              if (bsCollapse) {
+                bsCollapse.hide();
+              } else {
+                menu.classList.remove("show");
+              }
+            });
+          }
+        });
+      });
+
+      window.addEventListener("hashchange", updateRoute);
+
+      window.addEventListener("DOMContentLoaded", () => {
+        updateRoute();
+      });
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("sidebar-open");
+      });
+
+      // Close sidebar when clicking outside in mobile view
+      document.addEventListener("click", (e) => {
+        if (window.innerWidth < 768) {
+          if (sidebar.classList.contains("sidebar-open")) {
+            if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+              sidebar.classList.remove("sidebar-open");
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

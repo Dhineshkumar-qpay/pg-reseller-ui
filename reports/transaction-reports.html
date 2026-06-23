@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions By Date</title>
+  </head>
+  <body>
+    <!-- Top card -->
+    <div class="card shadow-sm border mb-4 top-card-global">
+      <div class="card-header py-3">
+        <small class="text-muted">
+          You are here : Reports > Transactions History >
+          <strong class="text-dark"> Transactions By Date</strong>
+        </small>
+        <br />
+        <small class="text-muted">
+          <strong class="text-dark"> Transaction details</strong> for a
+          specified date range are given in this page.
+        </small>
+        <br />
+        <small class="text-muted">
+          Please choose date range and submit to
+          <strong class="text-dark"> get the transaction details</strong>
+        </small>
+      </div>
+    </div>
+
+    <!-- No record -->
+    <div class="col-12 mb-4">
+      <div class="note-card">
+        There is no record avaliable for the search criteria
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="card border border-light shadow-sm mb-4 rounded-2">
+      <div class="card-body p-4">
+        <form class="row g-4">
+          <div class="col-12 col-md-6">
+            <label for="merchantselection" class="custom-label"> Select </label>
+            <select class="custom-select" id="merchantselection" required>
+              <option value="financialyear">
+                Current Financial Year (From April 1 2021)
+              </option>
+              <option value="all">Archive</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="currencySelect" class="custom-label"> Currency </label>
+            <select class="custom-select" id="currencySelect" required>
+              <option value="1">INR</option>
+              <option value="2">USD</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="datefrom" class="custom-label"
+              >From Date <strong class="text-danger">*</strong></label
+            >
+            <input type="date" class="custom-input" id="datefrom" required />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="dateto" class="custom-label"
+              >To Date <strong class="text-danger">*</strong></label
+            >
+            <input type="date" class="custom-input" id="dateto" required />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="custom-label"
+              >Merchant <strong class="text-danger">*</strong></label
+            >
+            <select class="custom-select" required>
+              <option value="" disabled selected>--Select--</option>
+              <option value="1">Merchant A</option>
+              <option value="2">Merchant B</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <div class="horizontal-scroll d-flex gap-2 flex-nowrap pb-2">
+              <button
+                type="submit"
+                class="btn btn-primary flex-shrink-0 text-nowrap"
+              >
+                Submit
+              </button>
+              <button
+                type="reset"
+                class="btn btn-warning flex-shrink-0 text-nowrap"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Top card -->
+    <div class="card shadow-sm border mb-4 top-card-global">
+      <div class="card-header py-3">
+        <small class="text-muted">
+          You are here : Settings >
+          <strong class="text-dark">User Registration</strong>
+        </small>
+      </div>
+      <div class="card-body p-4">
+        <p class="title">
+          New user accounts can be added & edited in this page.
+        </p>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="card border border-light shadow-sm mb-4 rounded-2">
+      <div class="card-body p-4">
+        <form class="row g-4">
+          <div class="col-12 col-md-6">
+            <label class="custom-label"
+              >Roles Type <strong class="text-danger">*</strong></label
+            >
+            <div class="d-flex flex-wrap gap-4 mt-1">
+              <div class="form-check">
+                <input
+                  class="custom-check-input"
+                  type="radio"
+                  name="modeOption"
+                  id="modeAll"
+                  required
+                />
+                <label class="custom-check-label" for="modeAll">Support</label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="custom-check-input"
+                  type="radio"
+                  name="modeOption"
+                  id="modeChoose"
+                />
+                <label class="custom-check-label" for="modeChoose">Admin</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="username" class="custom-label">
+              User Name <strong class="text-danger">*</strong>
+            </label>
+            <input type="text" class="custom-input" id="username" required />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="password" class="custom-label">
+              Password <strong class="text-danger">*</strong></label
+            >
+            <input
+              type="password"
+              class="custom-input"
+              id="password"
+              required
+            />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="confirmpassword" class="custom-label">
+              Confirm Password <strong class="text-danger">*</strong>
+            </label>
+            <input
+              type="password"
+              class="custom-input"
+              id="confirmpassword"
+              required
+            />
+          </div>
+
+          <div class="col-12 mb-3">
+            <div
+              class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-2"
+            >
+              <label for="merchantSelect" class="custom-label mb-0">
+                Select Menu <strong class="text-danger">*</strong>
+                <span class="fst-italic small fw-normal">
+                  (drag & drop to reorder)
+                </span>
+              </label>
+
+              <div class="d-flex flex-sm-row gap-2">
+                <button type="button" class="btn btn-outline-success">
+                  Select All
+                </button>
+
+                <button type="button" class="btn btn-outline-danger">
+                  Deselect All
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-3 mt-1">
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+              <li class="d-flex align-items-center gap-2" style="cursor: grab">
+                <input
+                  class="custom-check-input mt-0"
+                  type="checkbox"
+                  id="smsPaymentLink"
+                />
+                <i class="bi bi-folder-fill text-warning fs-6"></i>
+                <label
+                  class="custom-check-label fw-normal small text-dark"
+                  for="smsPaymentLink"
+                  >SMS Payment Link</label
+                >
+              </li>
+              <li class="d-flex align-items-center gap-2" style="cursor: grab">
+                <input
+                  class="custom-check-input mt-0"
+                  type="checkbox"
+                  id="settings"
+                />
+                <i class="bi bi-folder-fill text-warning fs-6"></i>
+                <label
+                  class="custom-check-label fw-normal small text-dark"
+                  for="settings"
+                  >Settings</label
+                >
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <div class="col-12 mt-3 d-flex gap-2">
+            <button type="submit" class="btn btn-primary px-4">Submit</button>
+            <button type="reset" class="btn btn-warning px-4">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="custom-table-card">
+      <div class="custom-table-card-body">
+        <!-- Table -->
+        <div class="custom-table-responsive">
+          <table
+            id="userRegistrationTable"
+            class="custom-table custom-table-bordered custom-align-middle custom-text-center custom-mb-0"
+          >
+            <thead class="custom-table-light">
+              <tr>
+                <th>S.No</th>
+                <th>Action</th>
+                <th>Login ID</th>
+                <th>User Name</th>
+                <th>User Group</th>
+                <th>Status</th>
+                <th>Roles</th>
+              </tr>
+            </thead>
+
+            <tbody id="userRegistrationTableBody">
+              <tr>
+                <td>1</td>
+                <td>
+                  <a href="#" class="action-link edit-link"> Edit </a>
+                  <a href="#" class="action-link delete-link"> Delete </a>
+                </td>
+                <td>gro_196DA2</td>
+                <td>growtech</td>
+                <td>Reseller</td>
+                <td class="status-active">Active</td>
+                <td>A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#userRegistrationTable")) {
+          $("#userRegistrationTable").DataTable().destroy();
+        }
+        $("#userRegistrationTable").DataTable({
+          scrollX: true,
+          language: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries",
+          },
+          dom:
+            "<'row mb-3'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row mt-3'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+        });
+      });
+    </script>
+  </body>
+</html>
